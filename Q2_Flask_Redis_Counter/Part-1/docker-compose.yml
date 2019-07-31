@@ -1,0 +1,13 @@
+version: '3'
+services:
+    web:
+        build: .
+        ports:
+            # Mapping to port 5000 itself
+            - "5000:5000"
+        depends_on:
+            # Pulling redis image for storing counter
+            - redis
+    # Redis
+    redis:
+        image: redis

@@ -1,0 +1,84 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2019-07-31T13:44:35Z
+  generateName: krutik-
+  labels:
+    app: krutik
+  name: krutik-t4z6h
+  namespace: default
+  resourceVersion: "1718"
+  selfLink: /api/v1/namespaces/default/services/krutik-t4z6h
+  uid: 559ed3b3-b399-11e9-9a25-42010a8e022d
+spec:
+  clusterIP: 10.98.13.77
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 31435
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: krutik
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 34.74.117.15
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2019-07-31T13:52:37Z
+  generateName: krutik-
+  labels:
+    app: krutik
+  name: krutik-pcc7j
+  namespace: default
+  resourceVersion: "3060"
+  selfLink: /api/v1/namespaces/default/services/krutik-pcc7j
+  uid: 74ecf5ca-b39a-11e9-9a25-42010a8e022d
+spec:
+  clusterIP: 10.98.12.75
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: krutik
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2019-07-31T13:44:25Z
+  generateName: krutik-
+  labels:
+    app: krutik
+  name: krutik-5fx9m
+  namespace: default
+  resourceVersion: "1513"
+  selfLink: /api/v1/namespaces/default/services/krutik-5fx9m
+  uid: 4f5c4cd0-b399-11e9-9a25-42010a8e022d
+spec:
+  clusterIP: 10.98.3.164
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 32547
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: krutik
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

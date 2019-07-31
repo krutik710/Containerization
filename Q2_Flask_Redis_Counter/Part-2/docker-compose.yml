@@ -1,0 +1,18 @@
+version: '3'
+services:
+    web:
+        build: .
+        ports:
+            # Mapping to port 5000 itself
+            - "5000:5000"
+        
+        volumes:
+            # Maps current working directory with /code of container, hence in turn mirrors changes
+            - .:/code
+
+        depends_on:
+            # Pulling redis image for storing counter
+            - redis
+    # Redis
+    redis:
+        image: redis
